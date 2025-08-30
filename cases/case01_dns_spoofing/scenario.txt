@@ -1,0 +1,77 @@
+📂 Case 1: Suspicious DNS Activity – Possible Credential Harvesting
+🔹 Scenario
+
+At 07:15 AM, users at a company reported login issues when accessing business.com.
+Security monitoring revealed that some DNS queries for business.com resolved to attacker-controlled IP: 203.0.113.77 instead of the legitimate one 198.51.100.45.
+The attack lasted ~45 minutes before disappearing.
+
+🔹 Objective
+
+Investigate possible DNS spoofing / phishing attack and determine:
+
+Was DNS spoofing or cache poisoning performed?
+
+Which users/accounts are affected?
+
+What attacker infrastructure was used?
+
+How should defenders respond?
+
+🔹 Tools & Steps
+
+Wireshark / tcpdump
+
+Inspect PCAP logs for abnormal DNS replies.
+
+Look for mismatched IP resolutions of business.com.
+
+Example filter:
+
+dns && ip.addr == 203.0.113.77
+
+
+ELK Stack (Log Analysis)
+
+Search DNS logs for abnormal IP resolutions.
+
+Correlate with authentication logs (failed/suspicious logins).
+
+SpiderFoot / OSINT
+
+Investigate 203.0.113.77 for attacker infrastructure.
+
+Check if it links to known phishing domains or dark web reports.
+
+Autopsy (Disk Forensics)
+
+Analyze user machines suspected of visiting the spoofed domain.
+
+Look for saved phishing HTML pages or credential theft malware.
+
+Volatility (Memory Forensics)
+
+If memory dumps are available, search for DNS cache entries.
+
+Example command:
+
+volatility -f memory.img dnsdump
+
+🔹 Expected Findings
+
+Multiple DNS replies show attacker’s IP instead of the legit one.
+
+Logs show user credentials being sent to businessz.com.
+
+Attacker’s server traced to VPS in another country.
+
+At least 3 employees exposed credentials.
+
+🔹 Mitigation & Response
+
+Flush DNS cache on all systems.
+
+Force password reset for all affected users.
+
+Block attacker IP 203.0.113.77 at firewall.
+
+Deploy DNSSEC to prevent spoofing in the future.
