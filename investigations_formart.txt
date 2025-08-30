@@ -1,0 +1,79 @@
+Case 1 – DNS Spoofing Attack
+
+Fake DNS replies redirect business.com → businessz.com.
+
+Tools: Wireshark/tcpdump (pcap analysis), ELK (log correlation).
+
+Evidence: Suspicious DNS response packets, mismatched IP.
+
+Case 2 – Malware Infection on Employee PC
+
+Suspicious executable dropped.
+
+Tools: Volatility (RAM analysis), Cuckoo Sandbox, strings.
+
+Evidence: Malicious process in memory, persistence registry keys.
+
+Case 3 – Phishing Email Investigation
+
+Employee received a malicious attachment.
+
+Tools: MISP (threat intel), email header analysis, VirusTotal.
+
+Evidence: Sender spoofing, malicious PDF with embedded macro.
+
+Case 4 – Data Exfiltration
+
+Unusual outbound traffic detected at 2AM.
+
+Tools: Wireshark, ELK, NetFlow analysis.
+
+Evidence: Large encrypted uploads to unknown IP.
+
+Case 5 – Dark Web Leak
+
+Credentials of employees found on dark web.
+
+Tools: SpiderFoot (OSINT), HaveIBeenPwned API, Tor.
+
+Evidence: Leaked company emails in credential dumps.
+
+Case 6 – Insider Threat
+
+Suspicious database queries by internal user.
+
+Tools: ELK/Splunk, audit logs, SIEM alerts.
+
+Evidence: User account accessed sensitive finance data out of shift.
+
+Case 7 – Ransomware Outbreak
+
+Multiple PCs encrypted.
+
+Tools: Volatility (RAM dump), YARA rules, MITRE ATT&CK mapping.
+
+Evidence: Ransom note, AES key fragments in memory.
+
+Case 8 – Web Shell on Company Website
+
+Attackers uploaded shell.php.
+
+Tools: Apache logs, Wireshark, hash analysis.
+
+Evidence: Suspicious POST requests, anomalous PHP file.
+
+Case 9 – ARP Poisoning Attack
+
+Man-in-the-middle detected on local network.
+
+Tools: Wireshark, arpwatch, Zeek.
+
+Evidence: Duplicate ARP replies, altered gateway MAC.
+
+Case 10 – DDoS Traceback
+
+Sudden outage on business website.
+
+Tools: NetFlow, Wireshark, ELK dashboard.
+
+Evidence: Multiple IPs flooding SYN requests.

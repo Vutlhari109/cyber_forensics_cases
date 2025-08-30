@@ -1,0 +1,20 @@
+cyber_forensics_cases/
+│── cases/
+│   ├── case01_dns_spoofing/
+│   ├── case02_malware_infection/
+│   ├── case03_phishing_email/
+│   ├── case04_data_exfiltration/
+│   ├── case05_darkweb_leak/
+│   ├── case06_internal_insider/
+│   ├── case07_ransomware/
+│   ├── case08_web_shell/
+│   ├── case09_arp_poisoning/
+│   ├── case10_ddos_traceback/
+│
+│── docs/
+│   ├── methodology.md   (investigation methodology)
+│   ├── tools_used.md    (Wireshark, Volatility, ELK, Spiderfoot, etc.)
+│
+│── README.md
+│── LICENSE
+│── .gitignore
